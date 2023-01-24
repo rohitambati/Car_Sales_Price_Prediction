@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Car sale value prediction</h1>
+	<body style = "background-image:url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat: no-repeat; color: white;">
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{url_for('predict')}}"method="post">
+    	<input type="text" name="Sales_in_thousands" placeholder="Sales_in_thousands" required="required" />
+    	<input type="text" name="Year_resale_value" placeholder="Year_resale_value" required="required" />
+	<input type="text" name="Wheelbase" placeholder="Wheelbase" required="required" />
+	<input type="text" name="Width" placeholder="Width" required="required" />
+	<input type="text" name="Fuel_Efficiency" placeholder="Fuel_Efficiency" required="required" />
+      <input type="text" name="Latest_launch_date" placeholder="Latest_launch_date" required="required" />
+        <button type="Submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
